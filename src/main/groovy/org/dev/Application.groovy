@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions
  */
 class Application {
 
-    public static final String CHROMEDRIVER_PATH = '/Users/rmatthes/Downloads/chromedriver'
+    public static final String CHROMEDRIVER_PATH = './bin/macos/chromedriver'
 
     static void main(String[] args) {
         println("howdy!")
