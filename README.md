@@ -12,7 +12,6 @@ Uses ChromeDriver 80.0.3987.106 stored at
 3. `./bin/win32/chromedriver.exe`
 
 Usage on mac or linux:
-
 ```
 git clone https://github.com/raymatthes/chromedriver-connect.git && cd chromedriver-connect && ./gradlew run
 ```
