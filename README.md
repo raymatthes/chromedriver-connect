@@ -1,10 +1,23 @@
 # chromedriver-connect
 ChromeDriver connection test
 
-Uses macOS ChromeDriver 80.0.3987.106 stored at
-`./bin/macos/chromedriver`
+Prerequisites
+1. chrome version 80
+2. git e.g. version 2.21.1
+3. java e.g. openjdk version 1.8.0_212 
 
-Usage:
+Uses ChromeDriver 80.0.3987.106 stored at
+1. `./bin/linux64/chromedriver`
+1. `./bin/mac64/chromedriver`
+1. `./bin/win32/chromedriver.exe`
+
+Usage on mac or linux:
+
 ```
-git clone git@github.com:raymatthes/chromedriver-connect.git && cd chromedriver-connect && ./gradlew run
+git clone https://github.com:raymatthes/chromedriver-connect.git && cd chromedriver-connect && ./gradlew run
 ```
+
+Usage on windows:
+```
+git clone https://github.com/raymatthes/chromedriver-connect.git & cd chromedriver-connect & .\gradlew.bat run
+```           
