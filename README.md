@@ -8,8 +8,8 @@ Prerequisites
 
 Uses ChromeDriver 80.0.3987.106 stored at
 1. `./bin/linux64/chromedriver`
-1. `./bin/mac64/chromedriver`
-1. `./bin/win32/chromedriver.exe`
+2. `./bin/mac64/chromedriver`
+3. `./bin/win32/chromedriver.exe`
 
 Usage on mac or linux:
 
