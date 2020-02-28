@@ -15,7 +15,7 @@ class Application {
     public static final String CHROMEDRIVER_PATH_WIN32 = './bin/win32/chromedriver.exe'
 
     static void main(String[] args) {
-        println("howdy!")
+        println('test start')
 
         String path = determineExecutable()
         System.setProperty('webdriver.chrome.driver', path)
@@ -31,6 +31,8 @@ class Application {
         sleep(3000)
 
         driver.quit()
+
+        println('test success')
 
         System.exit(0)
     }
