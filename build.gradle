@@ -4,9 +4,6 @@ plugins {
     id 'application'
 }
 apply plugin: "java"
-ext {
-    javaMainClass = "org.dev.Application"
-}
 
 group 'org.example'
 version '1.0-SNAPSHOT'
@@ -30,5 +27,5 @@ dependencies {
 }
 
 application {
-    mainClassName = javaMainClass
+    mainClass.set("org.dev.Application")
 }
