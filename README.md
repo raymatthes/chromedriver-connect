@@ -2,11 +2,11 @@
 ChromeDriver connection test
 
 Prerequisites
-1. chrome version 85
+1. chrome version 90
 2. git e.g. version 2.21.1
 3. java e.g. openjdk version 1.8.0_212 
 
-Uses ChromeDriver 85.0.4183.87 stored at
+Uses ChromeDriver 90.0.4430.24 stored at
 1. `./bin/linux64/chromedriver`
 2. `./bin/mac64/chromedriver`
 3. `./bin/win32/chromedriver.exe`
