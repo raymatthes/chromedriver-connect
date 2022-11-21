@@ -1,9 +1,15 @@
 package org.dev
 
 import org.apache.commons.lang3.SystemUtils
+import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
+import org.openqa.selenium.WebElement
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeOptions
+import org.openqa.selenium.support.ui.ExpectedConditions
+import org.openqa.selenium.support.ui.WebDriverWait
+
+import java.time.Duration
 
 /**
  * @author Ray Matthes
@@ -26,10 +32,15 @@ class Application {
         options.setAcceptInsecureCerts(true)
 
         WebDriver driver = new ChromeDriver(options)
-        driver.get("http://www.google.com")
-
-        sleep(3000)
-
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10))
+        driver.get("https://www.google.com")
+        By locator = By.name("q")
+        wait.until(ExpectedConditions.elementToBeClickable(locator))
+        WebElement element = driver.findElement(locator)
+        element.sendKeys("Selenium Java")
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//ul")))
+        element.submit()
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("search")))
         driver.quit()
 
         println('test success')
