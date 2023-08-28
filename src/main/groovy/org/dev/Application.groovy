@@ -18,7 +18,8 @@ class Application {
 
     public static final String CHROMEDRIVER_PATH_LINUX64 = './bin/linux64/chromedriver'
     public static final String CHROMEDRIVER_PATH_MAC64 = './bin/mac64/chromedriver'
-    public static final String CHROMEDRIVER_PATH_WIN32 = './bin/win32/chromedriver.exe'
+    public static final String CHROMEDRIVER_PATH_MAC_ARM_64 = './bin/mac64_arm/chromedriver'
+    public static final String CHROMEDRIVER_PATH_WIN64 = './bin/win64/chromedriver.exe'
 
     static void main(String[] args) {
         println('test start')
@@ -49,12 +50,20 @@ class Application {
     }
 
     protected static String determineExecutable() {
-        String path = CHROMEDRIVER_PATH_MAC64
-        if (SystemUtils.IS_OS_LINUX) {
+        String path = ''
+
+        if (SystemUtils.IS_OS_MAC) {
+            path = (SystemUtils.OS_ARCH == 'x86_64') ?
+                    CHROMEDRIVER_PATH_MAC64 :
+                    CHROMEDRIVER_PATH_MAC_ARM_64
+        } else if (SystemUtils.IS_OS_LINUX) {
             path = CHROMEDRIVER_PATH_LINUX64
         } else if (SystemUtils.IS_OS_WINDOWS) {
-            path = CHROMEDRIVER_PATH_WIN32
+            path = CHROMEDRIVER_PATH_WIN64
+        } else {
+            throw new Error('Unknown OS')
         }
+
         path
     }
 
