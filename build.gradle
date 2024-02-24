@@ -3,7 +3,9 @@ plugins {
     id 'application'
 }
 
-ext['selenium.version'] = '4.9.0'
+String slf4jVersion = '2.0.12'
+String seleniumVersion = '4.18.1'
+ext['selenium.version'] = seleniumVersion
 
 group 'org.dev'
 version '1'
@@ -14,15 +16,15 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.codehaus.groovy:groovy-all:3.0.18'
+    implementation 'org.apache.groovy:groovy-all:4.0.18'
 
-    implementation 'org.seleniumhq.selenium:selenium-java:4.9.1'
-    implementation 'org.seleniumhq.selenium:selenium-chrome-driver:4.9.1'
-    implementation 'org.slf4j:slf4j-api:2.0.7'
-    implementation 'org.slf4j:slf4j-simple:2.0.7'
-    implementation 'org.apache.commons:commons-lang3:3.12.0'
+    implementation "org.seleniumhq.selenium:selenium-java:${seleniumVersion}"
+    implementation "org.seleniumhq.selenium:selenium-chrome-driver:${seleniumVersion}"
+    implementation "org.slf4j:slf4j-api:${slf4jVersion}"
+    implementation "org.slf4j:slf4j-simple:${slf4jVersion}"
+    implementation 'org.apache.commons:commons-lang3:3.14.0'
 
-    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.spockframework:spock-core:2.4-M1-groovy-4.0'
 }
 
 application {
